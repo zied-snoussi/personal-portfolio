@@ -1,31 +1,31 @@
-import { useState, useEffect } from "react";
-import { Col, Row, Alert } from "react-bootstrap";
+import { useState, useEffect } from 'react';
+import { Col, Row, Alert } from 'react-bootstrap';
 
 export const Newsletter = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState('');
 
   useEffect(() => {
     if (status === 'success') clearFields();
-  }, [status])
+  }, [status]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     email &&
-    email.indexOf("@") > -1 &&
-    onValidated({
-      EMAIL: email
-    })
-  }
+      email.indexOf('@') > -1 &&
+      onValidated({
+        EMAIL: email,
+      });
+  };
 
   const clearFields = () => {
     setEmail('');
-  }
+  };
 
   return (
-      <Col lg={12}>
-        <div className="newsletter-bx wow slideInUp">
-          <Row>
-            <Col lg={12} md={6} xl={5}>
+    <Col lg={12}>
+      <div className="newsletter-bx wow slideInUp">
+        <Row>
+          {/* <Col lg={12} md={6} xl={5}>
               <h3>Subscribe to our Newsletter<br></br> & Never miss latest updates</h3>
               {status === 'sending' && <Alert>Sending...</Alert>}
               {status === 'error' && <Alert variant="danger">{message}</Alert>}
@@ -38,9 +38,16 @@ export const Newsletter = ({ status, message, onValidated }) => {
                   <button type="submit">Submit</button>
                 </div>
               </form>
-            </Col>
-          </Row>
-        </div>
-      </Col>
-  )
-}
+            </Col> */}
+          <center>
+            <h3>
+              Thank you for taking a moment to review this mini-portfolio. It
+              represents just a few examples of many years’ work. I hope you
+              find it interesting, pleasing, and exceptional.
+            </h3>
+          </center>
+        </Row>
+      </div>
+    </Col>
+  );
+};
